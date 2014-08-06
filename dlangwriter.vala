@@ -181,7 +181,7 @@ public class DlangWriter : ValabindWriter {
 				type = get_ctype (type);
 				if (f.variable_type is ArrayType) {
 					ArrayType array = f.variable_type as ArrayType;
-					int sz = array.length;
+					int sz = array.length();
 					defs += "  %s %s[%d];\n".printf (type, name, sz);
 				} else {
 					defs += "  %s %s;\n".printf (type, name);

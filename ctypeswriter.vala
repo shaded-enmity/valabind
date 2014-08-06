@@ -206,7 +206,7 @@ public class CtypesWriter : ValabindWriter {
 			string element = type_name (array.element_type, retType);
 			if (!array.fixed_length)
 				return element; //+"*"; // FIXME should this be element+"[]"?
-			return "'"+element+"', * %d".printf (array.length); // FIXME will this work?
+			return "'"+element+"', * %d".printf (array.length()); // FIXME will this work?
 		}
 
 		if (!ignoreRef && (type is ReferenceType)) {
@@ -408,7 +408,7 @@ n++;
 			warning ("Arrays not yet supported in ctypes bindings");
 			if (!array.fixed_length)
 				field = element + "* " + f.name; // FIXME should this be element+"[]"?
-			field = "'%s', %s * %d".printf (f.name, element, array.length);
+			field = "'%s', %s * %d".printf (f.name, element, array.length());
             stype = element;
 		} else {
 			/* HACK to support generics. this is r2 specific */
