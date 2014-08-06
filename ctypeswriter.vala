@@ -206,7 +206,7 @@ public class CtypesWriter : ValabindWriter {
 			string element = type_name (array.element_type, retType);
 			if (!array.fixed_length)
 				return element; //+"*"; // FIXME should this be element+"[]"?
-			return "'"+element+"', * %d".printf (array.length()); // FIXME will this work?
+			return "'"+element+"', * %d".printf ((array.length)); // FIXME will this work?
 		}
 
 		if (!ignoreRef && (type is ReferenceType)) {
