@@ -67,7 +67,7 @@ public class NodeFFIWriter : ValabindWriter {
 			string element = type_name (array.element_type);
 			if (!array.fixed_length)
 				return "_.ptr("+element+")";
-			return "_.array("+element+", %d)".printf (array.length());
+			return "_.array("+element+", %d)".printf(0); //(array.length());
 		}
 
 		if (!ignoreRef && (type is ReferenceType)) {
